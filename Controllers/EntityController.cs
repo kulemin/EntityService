@@ -1,4 +1,5 @@
 ﻿using EntityService.Models;
+using EntityService.Services;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Linq;
@@ -12,17 +13,17 @@ namespace EntityService.Controllers
     
     public class EntityController : ControllerBase
     {
-        static Dictionary<Guid, Entity> Entities = new Dictionary<Guid, Entity>();
+        private static EntitiesService _service = new EntitiesService();
 
         [HttpGet(Name = "GetEntity")]
         public IActionResult Get(string entityGuid)
         {
             var isGiud = Guid.TryParse(entityGuid, out Guid result);
-            var entity = Entities.ContainsKey(result);
+            
             return !isGiud
                 ? BadRequest("Входная строка имела неверный формат или не является Guid.")
-                : Entities.ContainsKey(result)
-                ? Ok(JsonConvert.SerializeObject(Entities[result])) 
+                : _service.CheckById(result)
+                ? Ok(JsonConvert.SerializeObject(_service.GetById(result))) 
                 : BadRequest("Сущность с искомым Guid не найдена.");
         }
 
@@ -47,12 +48,12 @@ namespace EntityService.Controllers
                 if (!isDecimal) result += "Поле 'amount' имело неверный формат\r\n";
                 return BadRequest(result);
             }
-            if (Entities.ContainsKey(guid))
+            if (_service.CheckById(guid))
             {
-                Entities[guid].Amount = amount;
+                _service.UpdateById(guid, amount);
                 return BadRequest("Сущность с id " + guid + " изменена");
             }
-            Entities.Add(guid, new Entity() { Id = guid, OperationDate = date, Amount = amount });
+            _service.Insert(new Entity() { Id = guid, OperationDate = date, Amount = amount });
             return Ok("Создана сущность с ключом " + guid);
         }
     }

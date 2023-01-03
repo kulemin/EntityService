@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TAaSMcoIzxcAQ8piMk9juNNDqWEBejJLPPewuhR1zYIrRktvfxUP/qCHvBSGlhYrLuAapDHMWya5yZY2hzJX4w==",
+  "dgSpecHash": "Z1RYDI3k8TciHXbtaq4qRehKyoOQ//gpTEht4oxNZSUV6TbX6OLt3pGWO8MzU+GJxXNdvorbpV+c+IQd0fSbRQ==",
   "success": true,
-  "projectFilePath": "E:\\hdd\\.NETProjects\\EntityService\\EntityService.csproj",
+  "projectFilePath": "C:\\EntityService\\EntityService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kulem\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\kulem\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
