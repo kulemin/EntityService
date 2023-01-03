@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\EntityService\\EntityService.csproj": {}
+    "C:\\Entity\\EntityService\\EntityService.csproj": {}
   },
   "projects": {
-    "C:\\EntityService\\EntityService.csproj": {
+    "C:\\Entity\\EntityService\\EntityService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\EntityService\\EntityService.csproj",
+        "projectUniqueName": "C:\\Entity\\EntityService\\EntityService.csproj",
         "projectName": "EntityService",
-        "projectPath": "C:\\EntityService\\EntityService.csproj",
+        "projectPath": "C:\\Entity\\EntityService\\EntityService.csproj",
         "packagesPath": "C:\\Users\\kulem\\.nuget\\packages\\",
-        "outputPath": "C:\\EntityService\\obj\\",
+        "outputPath": "C:\\Entity\\EntityService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

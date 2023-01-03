@@ -13,7 +13,12 @@ namespace EntityService.Controllers
     
     public class EntityController : ControllerBase
     {
-        private static EntitiesService _service = new EntitiesService();
+        private static IEntitiesService _service;
+        public EntityController(IEntitiesService service)
+        {
+            if(_service == null)
+                _service = service;
+        }
 
         [HttpGet(Name = "GetEntity")]
         public IActionResult Get(string entityGuid)
@@ -28,7 +33,7 @@ namespace EntityService.Controllers
         }
 
         [HttpPost(Name = "InsertEntity")]
-        public IActionResult Post(object entity)
+        public IActionResult Insert(object entity)
         {
 
             dynamic values = JsonConvert.DeserializeObject(entity.ToString());
@@ -51,7 +56,7 @@ namespace EntityService.Controllers
             if (_service.CheckById(guid))
             {
                 _service.UpdateById(guid, amount);
-                return BadRequest("Сущность с id " + guid + " изменена");
+                return Ok("Сущность с id " + guid + " изменена");
             }
             _service.Insert(new Entity() { Id = guid, OperationDate = date, Amount = amount });
             return Ok("Создана сущность с ключом " + guid);
