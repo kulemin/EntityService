@@ -25,3 +25,4 @@ E:\hdd\.NETProjects\EntityService\obj\Debug\net6.0\refint\EntityService.dll
 E:\hdd\.NETProjects\EntityService\obj\Debug\net6.0\EntityService.pdb
 E:\hdd\.NETProjects\EntityService\obj\Debug\net6.0\EntityService.genruntimeconfig.cache
 E:\hdd\.NETProjects\EntityService\obj\Debug\net6.0\ref\EntityService.dll
+E:\hdd\.NETProjects\EntityService\bin\Debug\net6.0\Newtonsoft.Json.dll
